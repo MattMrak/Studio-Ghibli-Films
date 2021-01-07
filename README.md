@@ -1,2 +1,2 @@
-# best-gardens-around-the-world
+# studio-ghibli-films
 Phase 1 Project
