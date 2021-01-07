@@ -1,0 +1,7 @@
+require "bundler/setup"
+require "best_gardens_around_the_world"
+
+
+# (If you use this, don't forget to add pry to your Gemfile!)
+require "pry"
+Pry.start
