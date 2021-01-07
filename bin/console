@@ -1,0 +1,5 @@
+require "bundler/setup"
+require "studio_ghibli_films"
+
+require "pry"
+Pry.start
