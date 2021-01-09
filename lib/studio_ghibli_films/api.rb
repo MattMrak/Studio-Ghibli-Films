@@ -4,40 +4,27 @@ require 'json'
 require 'awesome_print'
 require 'pry'
 
-class StudioGhibliFilms
+class StudioGhibliFilmsAPI
 
     URL = "https://ghibliapi.herokuapp.com/films"
 
   def get_films
     uri = URI.parse(URL)
     response = Net::HTTP.get_response(uri)
-    ap JSON.parse(response.body)
+    json = JSON.parse(response.body)
+    film_titles(json)
   end
 
-  def film_titles
-      films = JSON.parse(self.get_films)
-      films.collect do |film|
-        film["title"]
+  def film_titles(json)
+    films = []
+      json.collect do |film|
+        films << film["title"]
     end
   end
-
-  # def film_titles
-  #   titles = []
-  #   self.map do |item|
-  #     titles << item.title
-  #   end
-  #   titles
-  # end
-
+  
 end
-  #  def film_titles
-  #        films = JSON.parse(self.get_films)
-  #        films.collect do |film|
-  #          film["title"]
-  #        end
-  #  end
 
-# films = StudioGhibliFilms.new.get_films
-# puts films
-films = StudioGhibliFilms.new
-puts films.film_titles.uniq
+films = StudioGhibliFilmsAPI.new.get_films
+puts ap films.uniq
+# films = StudioGhibliFilms.new
+# puts films.film_titles.uniq
