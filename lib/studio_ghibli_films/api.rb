@@ -14,16 +14,30 @@ class StudioGhibliFilms
     ap JSON.parse(response.body)
   end
 
-   def film_title
-         films = JSON.parse(self.get_films)
-         films.collect do |film|
-           film["title"]
-         end
-   end
+  def film_titles
+      films = JSON.parse(self.get_films)
+      films.collect do |film|
+        film["title"]
+    end
+  end
+
+  # def film_titles
+  #   titles = []
+  #   self.map do |item|
+  #     titles << item.title
+  #   end
+  #   titles
+  # end
 
 end
+  #  def film_titles
+  #        films = JSON.parse(self.get_films)
+  #        films.collect do |film|
+  #          film["title"]
+  #        end
+  #  end
 
-#films = StudioGhibliFilms.new.get_films
-#puts films
+# films = StudioGhibliFilms.new.get_films
+# puts films
 films = StudioGhibliFilms.new
-puts films.film_title.uniq
+puts films.film_titles.uniq
