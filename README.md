@@ -11,8 +11,7 @@ These Ruby Gems provide a CLI to view a list of Studio Ghibli films along with i
 
 Type the code below and follow the on screen prompts.
 
-    $ studio-ghibli-films
-# Development
+    $ ./bin/studio-ghibli-films
 
 # License
 

@@ -1,8 +1,14 @@
 require 'tty-prompt'
+require 'net/http'
+require 'open-uri'
+require 'json'
+require 'awesome_print'
+require 'pry'
 
 class StudioGhibliFilms::CLI
   
   def call
+     system "clear"
         puts "WELCOME TO THE MAGICAL WORLD OF STUDIO GHIBLI!"    
         prompt = TTY::Prompt.new
         option = prompt.select("What would you like to do?") do |options|
@@ -11,24 +17,24 @@ class StudioGhibliFilms::CLI
           options.choice "Exit", 3
         end
       if option === 1
-        puts film
+        film
       elsif option === 2
-        puts descriptions
+        descriptions
       else
         option === 3
-        puts exited
+        exited
       end
   end
 
   def film
-    "Spirited Away"
-    # need to link parsed api for titles
+    sleep (1)
+    films = StudioGhibliFilmsAPI1.new.get_films
+    puts ap films.uniq
   end
 
   def descriptions
-    "Spirited Away From Studio Ghibli"
-    # need to link parsed api
-    films = StudioGhibliFilms.new.get_films
+    sleep (1)
+    films = StudioGhibliFilmsAPI2.new.get_films
     puts ap films.uniq
   end
 

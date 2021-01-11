@@ -1,4 +1,5 @@
 class StudioGhibliFilms::Films
+    
     attr_accessor :title, :description, :director, :producer, :release_date
     
     @@all= []
@@ -16,19 +17,4 @@ class StudioGhibliFilms::Films
         @@all
     end
 
-    def title        
-    end
-
-    def description
-    end
-
-    def director
-    end
-
-    def producer
-    end
-
-    def release_date
-    end
-    
 end

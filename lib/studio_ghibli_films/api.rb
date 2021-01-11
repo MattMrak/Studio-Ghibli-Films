@@ -4,7 +4,7 @@ require 'json'
 require 'awesome_print'
 require 'pry'
 
-class StudioGhibliFilmsAPI
+class StudioGhibliFilmsAPI1
 
     URL = "https://ghibliapi.herokuapp.com/films"
 
@@ -24,7 +24,20 @@ class StudioGhibliFilmsAPI
   
 end
 
-films = StudioGhibliFilmsAPI.new.get_films
+class StudioGhibliFilmsAPI2
+  
+  URL = "https://ghibliapi.herokuapp.com/films"
+  
+  def get_films
+    uri = URI.parse(URL)
+    response = Net::HTTP.get_response(uri)
+    json = JSON.parse(response.body)
+  end
+
+end
+
+films = StudioGhibliFilmsAPI1.new.get_films
 puts ap films.uniq
-# films = StudioGhibliFilms.new
-# puts films.film_titles.uniq
+
+films = StudioGhibliFilmsAPI2.new.get_films
+puts ap films.uniq
