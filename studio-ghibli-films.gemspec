@@ -6,10 +6,10 @@ Gem::Specification.new do |spec|
   spec.description = "Provides a list of Studio Ghibli films along with information for each movie."
   spec.authors     = ["Matthew Mrakovcic"]
   spec.email       = 'matthewmrakovcic@gmail.com'
-  spec.files       = ["lib/studio_ghibli_films.rb", "lib/studio_ghibli_films/cli.rb", "lib/studio_ghibli_films/api.rb", "config/environment.rb"]
+  spec.files       = ["lib/studio_ghibli_films", "lib/studio_ghibli_films/api", "lib/studio_ghibli_films/cli", "lib/studio_ghibli_films/film", "lib/studio_ghibli_films/version", "config/environment"]
   spec.homepage    = 'https://github.com/MattMrak/studio-ghibli-films'
   spec.license     = 'MIT'
-  spec.executables << 'studio-ghibli-films'
+  spec.executables << './bin/studio-ghibli-films'
 
   spec.add_development_dependency 'bundler', '~> 2.2', '>= 2.2.4'
   spec.add_development_dependency 'rake', '~> 13.0', '>= 13.0.3'
