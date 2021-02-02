@@ -18,4 +18,5 @@ Gem::Specification.new do |spec|
   spec.add_development_dependency 'pry', '~> 0.13.1'
   spec.add_development_dependency 'awesome_print', '~> 1.8.0'
   spec.add_development_dependency 'tty-prompt', '~> 0.23.0'
+  spec.add_development_dependency 'colorize', '~> 0.8.1'
 end

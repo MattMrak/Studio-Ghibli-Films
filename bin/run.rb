@@ -7,3 +7,4 @@ JSON
 Pry
 TTYPrompt
 AwesomePrint
+Colorize
