@@ -1,4 +1,4 @@
-# studio-ghibli-films
+# Studio-Ghibli-Films
 Phase 1 Project
 
 These Ruby Gems provide a CLI to view a list of Studio Ghibli films along with information for each film.
