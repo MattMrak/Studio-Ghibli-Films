@@ -1,7 +1,7 @@
 # Studio-Ghibli-Films
 Phase 1 Project
 
-These Ruby Gems provide a CLI to view a list of Studio Ghibli films along with information for each film.
+This CLI provides a list of Studio Ghibli films along with information for each movie.
 
 # Installation
 Type the code below.
@@ -11,7 +11,7 @@ Type the code below.
 # Usage
 Type the code below and follow the on screen prompts.
 
-    $ ./bin/studio-ghibli-films
+    $ ruby bin/run
 
 # Contributors Guide
 This project was created to be a relatively simple, fun and welcoming space for collaboration. Pull Requests and Bug Reports are supported, please do so on GitHub at https://github.com/MattMrak/studio-ghibli-films. 

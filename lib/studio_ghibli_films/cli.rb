@@ -8,7 +8,7 @@ class CLI
   
   def menu
     sleep (1)
-    puts "Would You Like To See A List Films?"
+    puts "Would You Like To See A List Of Films?"
     puts "Type 'yes' to continue, or any other key to exit."
     user_input = gets.strip.downcase
     if user_input == "yes" || user_input == "y"
