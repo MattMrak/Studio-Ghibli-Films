@@ -2,6 +2,7 @@ class CLI
   
   def call
     puts logo
+    sleep (1)
     puts "WELCOME TO THE MAGICAL WORLD OF STUDIO GHIBLI!"
     API.fetch_films
     self.menu
@@ -22,14 +23,13 @@ class CLI
       puts "\n"
       display_list_of_films
       ask_user_for_film_choice
-      sleep (1)
-      puts "\n"
+      sleep (2)
       menu
     else
       puts "\n"
       puts "Thank You, Come Back Soon!"
       sleep (3)
-      # system "clear"
+      system "clear"
     end
   end
 
@@ -40,7 +40,7 @@ class CLI
   end
 
   def ask_user_for_film_choice
-    sleep (1)
+    sleep (2)
     puts "\n"
     puts "-> Type the number of the film you'd like to know more about, and press 'enter'"
     index = gets.strip.to_i - 1
