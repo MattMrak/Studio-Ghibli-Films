@@ -1,6 +1,7 @@
 class CLI
   
   def call
+    puts logo
     puts "WELCOME TO THE MAGICAL WORLD OF STUDIO GHIBLI!"
     API.fetch_films
     self.menu
@@ -8,11 +9,14 @@ class CLI
   
   def menu
     sleep (1)
+    puts "\n"
     puts "Would You Like To See A List Of Films?"
-    puts "Type 'yes' to continue, or any other key to exit."
+    puts "-> Type 'yes' and press 'enter' to continue"
+    puts "-> Type any other key and press 'enter' to exit"
     user_input = gets.strip.downcase
     if user_input == "yes" || user_input == "y"
       sleep (1)
+      puts "\n"
       puts "Great Choice!"
       sleep (2)
       puts "\n"
@@ -25,7 +29,7 @@ class CLI
       puts "\n"
       puts "Thank You, Come Back Soon!"
       sleep (3)
-      system "clear"
+      # system "clear"
     end
   end
 
@@ -38,10 +42,10 @@ class CLI
   def ask_user_for_film_choice
     sleep (1)
     puts "\n"
-    puts "Type the number of the film you'd like to know more about, and press 'enter'"
+    puts "-> Type the number of the film you'd like to know more about, and press 'enter'"
     index = gets.strip.to_i - 1
     until index.between?(0, Film.all.length - 1)
-      puts "Invalid Selection. Choose A Valid Number."
+      puts "Invalid Selection. Please Choose A Valid Number."
       index = gets.strip.to_i - 1
     end
     film_instance = Film.all[index]
@@ -57,58 +61,61 @@ class CLI
     puts "Release Date: " + film.release_date
   end
 
+  def logo
+    puts "\n"
+    puts "                                                   .-                                
+                                         .:      `-`-.                               
+                               .       `: -`    .-   .                               
+                             -:-.      -  `-   ..    -                               
+                             :- -`    -`   /  .-     -                               
+                             -`` `.  `:   .- .-      :                               
+                            `-.`   .``+.`o/ `:/     `-                               
+                            .`   `-.:..``````/h`  +:.                                
+                            -/...`           ``  .o/`                                
+                          `-.                       `..                              
+                         .-                           `:`                            
+                        `+`   -.``                      -`                           
+                     `--+..  .o/ `.                      -.                          
+                     /-.     `-...`                       -`                         
+                   .+-         `                           -                         
+                  `./`      ---:/:-.-----                  `:                        
+                   .-.        `.`.----..`                  -o                        
+                 `-/..-.`      .---.`  `.                   :.                       
+               `.-`     `..`       .-`                       +.                      
+             `.`           .-`                               `+                      
+            `:.`             `-`                              `:                     
+           `:..-    .          :                               -.                    
+          `.     `-: -          .                               :                    
+         `-       ``--          .-                              /                    
+         :           `    .-`   ..                              /                    
+        :.              `-.`-    -                              .:                   
+        :                  `.    .`                              /                   
+       ..                        .`                              :                   
+       -`                        .                               -                   
+       -`                        :                               .                   
+       `                         .                                                   
+                                                                                     "
+    # puts "                               !         !          
+    #                           ! !       ! !          
+    #                          ! . !     ! . !          
+    #                            ^^^^^^^^^^^            
+    #                          ^             ^          
+    #                        ^  (0)       (0)  ^       
+    #                       ^                 ^       
+    #                      ^   ***************    ^     
+    #                    ^   *                 *   ^    
+    #                   ^   *   /   /   /    *    ^   
+    #                  ^   *                     *    ^
+    #                 ^   *   /   /   /   /   *    ^
+    #                ^   *                         *    ^
+    #                ^  *                           *   ^
+    #                ^  *                           *   ^
+    #                 ^ *                           *  ^  
+    #                  ^*                           * ^ 
+    #                   ^ *                        * ^
+    #                   ^  *                      *  ^
+    #                     ^  *       ) (         * ^
+    #                         ^^^^^^^^ ^^^^^^^^^ "
+  end
+
 end
-
-
-
-# class StudioGhibliFilms::CLI
-  
-#   def call
-#         system "clear"
-#         puts "WELCOME TO THE MAGICAL WORLD OF STUDIO GHIBLI!"    
-#         prompt = TTY::Prompt.new
-#         while true do
-#         option = prompt.select("What would you like to do?") do |options|
-#           options.choice "See All Film Titles", 1
-#           options.choice "View Film Descriptions", 2
-#           options.choice "Exit", 3
-#         end
-#       if option === 1
-#         film
-#       elsif option === 2
-#         descriptions
-#       else
-#         option === 3
-#         exited
-#         break
-#       end
-#     end
-#   end
-
-#   def film
-#     sleep (1)  
-#     films = StudioGhibliFilmsAPI.new.get_films
-#     films.each do |film|
-#       film.select do |k, v| if k === "title"
-#           puts ap "#{v}"
-#         end
-#       end
-#     end
-#   end
-
-#   def descriptions
-#     sleep (1)
-#     films = StudioGhibliFilmsAPI.new.get_films
-#     films.each do |film|
-#     movie_info = film.fetch_values("title", "description", "director", "release_date") 
-#     puts ap "Title: #{movie_info[0]} -- Director: #{movie_info[2]} -- Release Date: #{movie_info[3]} -- Description: #{movie_info[1]}"
-#     end
-#   end
-
-#   def exited
-#     puts "Thank you! Come back soon."
-#     sleep (3)
-#     system "clear"
-#   end
-
-# end

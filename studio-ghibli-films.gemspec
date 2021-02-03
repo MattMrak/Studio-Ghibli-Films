@@ -14,6 +14,5 @@ Gem::Specification.new do |spec|
   spec.add_development_dependency 'bundler', '~> 2.2', '>= 2.2.4'
   spec.add_development_dependency 'json', '~> 2.5', '>= 2.5.1'
   spec.add_development_dependency 'pry', '~> 0.13.1'
-  spec.add_development_dependency 'tty-prompt', '~> 0.23.0'
   spec.add_development_dependency 'lolize', '~> 0.0.3'
 end
