@@ -9,7 +9,7 @@ class CLI
   end
   
   def menu
-    sleep (1)
+    sleep (2)
     puts "\n"
     puts "Would You Like To See A List Of Films?"
     puts "-> Type 'yes' and press 'enter' to continue"
@@ -95,27 +95,6 @@ class CLI
        -`                        :                               .                   
        `                         .                                                   
                                                                                      "
-    # puts "                               !         !          
-    #                           ! !       ! !          
-    #                          ! . !     ! . !          
-    #                            ^^^^^^^^^^^            
-    #                          ^             ^          
-    #                        ^  (0)       (0)  ^       
-    #                       ^                 ^       
-    #                      ^   ***************    ^     
-    #                    ^   *                 *   ^    
-    #                   ^   *   /   /   /    *    ^   
-    #                  ^   *                     *    ^
-    #                 ^   *   /   /   /   /   *    ^
-    #                ^   *                         *    ^
-    #                ^  *                           *   ^
-    #                ^  *                           *   ^
-    #                 ^ *                           *  ^  
-    #                  ^*                           * ^ 
-    #                   ^ *                        * ^
-    #                   ^  *                      *  ^
-    #                     ^  *       ) (         * ^
-    #                         ^^^^^^^^ ^^^^^^^^^ "
   end
 
 end
