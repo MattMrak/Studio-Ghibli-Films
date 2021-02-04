@@ -1,5 +1,5 @@
 #!/usr/bin/env ruby
 
-require_relative '../lib/studio_ghibli_films'
+require_relative '../config/environment'
 
 CLI.new.call
